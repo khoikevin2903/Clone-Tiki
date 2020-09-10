@@ -1,0 +1,26 @@
+.branchCare {
+
+    width: 1250px;    
+    overflow: hidden;
+
+    img {
+        height: 96px;
+    }
+
+    .branchCare__ {
+        width: 9999px;
+        transition: all ease-in 1s ;
+
+        div {
+            width: 200px;
+        }
+    }
+
+}
+.direction {
+    top: 48%;
+}
+.direction i:last-child{
+   position: relative;
+   left: 1190px;
+}

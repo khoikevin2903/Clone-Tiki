@@ -1,0 +1,33 @@
+.freeship{
+
+    display: flex;
+    position: absolute;
+
+    z-index: 1;
+    top: 15px;
+    left: 30px;
+    padding: 2px 6px 2px 4px;
+   
+
+    background-color: rgb(0, 153, 0);
+
+    -webkit-box-align: center;
+    align-items: center;
+    
+}
+.freeship::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0px;
+    right: -4px;
+    height: 100%;
+    width: 12px;
+    transform: skewX(-16deg);
+    background-color: rgb(0, 153, 0);
+}
+
+.img-big {
+    height: 350px;
+    width: 320px;
+}

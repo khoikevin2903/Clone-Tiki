@@ -1,0 +1,20 @@
+.Nvgt {
+    li {
+        display: flex;
+        align-items: center;
+        padding-left: 6px;
+        padding-right: 20px;
+        padding-bottom: 9px;
+        padding-top: 7px;
+        font-size: 13px;
+
+        i {
+            width: 30px;
+            padding-left: 4px;
+        }
+    }
+
+    li:hover {
+        background-color: rgb(101, 176, 238);
+    }
+}

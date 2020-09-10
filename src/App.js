@@ -1,26 +1,85 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import ROUTES from './routes';
+import PropTypes from 'prop-types';
+import { useSelector, useDispatch } from 'react-redux';
+import ShowModal from './components/ShowModal/ShowModal';
+import Footer from './components/Footer/Footer';
+import history from './components/History/history';
+import Account from './page/Account/Account';
+import { useEffect } from 'react';
+import { fetchInfoUser } from './reducers/InfoUser';
+import {fetchSockPrice,SaveProduct} from './reducers/shockPriceProduct';
+
+
+App.propTypes = {
+	showModal: PropTypes.bool,
+};
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+	const Routes = ROUTES;
+
+	const dispatch = useDispatch();
+
+	useEffect(() => {
+		dispatch(fetchInfoUser('khoikevin'));
+		dispatch(fetchSockPrice('shock-price-product'));
+	}, [])
+
+	const loginSuccsess = useSelector(state => state.LoginSuccess);
+
+	const products = useSelector(state => state.SockPrice);
+	dispatch(SaveProduct(products));
+
+	if (loginSuccsess) {
+		Routes.push(
+			{
+				path: '/account/:name',
+				exact: false,
+				main: Account
+			},
+			{
+				path: '/account/address:name',
+				exact: false,
+				main: Account
+			}
+
+		);
+	}
+
+	const showModal = useSelector(state => state.ShowModal);
+	return (
+		<Router history={history}>
+			<div style={{ fontFamily: 'sans-serif' }}>
+				<div className="Tiki-App">
+					<div className="w-full">
+						{showContentMenus(ROUTES)}
+					</div>
+					<div className="w-full bg-gray-200">
+						<Footer />
+					</div>
+				</div>
+				{showModal && <ShowModal />}
+			</div>
+		</Router>
+	);
+}
+
+const showContentMenus = (routes) => {
+	var result = null;
+	if (routes.length > 0) {
+		result = routes.map((route, index) => {
+			return (<Route
+				key={index}
+				path={route.path}
+				exact={route.exact}
+				render={props => <route.main {...props} />}
+			/>)
+
+		})
+	}
+	return <Switch>{result}</Switch>
 }
 
 export default App;

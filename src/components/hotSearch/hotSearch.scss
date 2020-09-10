@@ -1,0 +1,28 @@
+.hotSearch {
+
+    width: 1250px;    
+    overflow: hidden;
+
+    img {
+        height: 96px;
+    }
+
+    .hotSearch__ {
+        width: 9999px;
+        transition: all 0.5s;
+
+        div {
+            width: 145px;
+        }
+    }
+
+}
+
+.Hotdirection i:last-child{
+   position: relative;
+   left: 1212px;
+}
+
+.Hotdirection {
+    top: 30%;
+}
