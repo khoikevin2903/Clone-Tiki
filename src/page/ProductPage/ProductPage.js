@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux';
 import { onAddToCart } from './../../reducers/cart';
 import { openMessageAddCart } from './../../reducers/MessageAddCart';
 import callAPI from './../../util/callApi';
+import * as firebase from 'firebase';
 import { formatCurrency } from './../../components/FormatMoney/FormatMoney';
 
 function ProductPage({ history, location, match }) {
@@ -13,12 +14,16 @@ function ProductPage({ history, location, match }) {
     const [product, setProduct] = useState({});
 
     useEffect(() => {
-        async function fetchData() {
-            const db = await callAPI(`shock-price-product/${match.params.id}`, 'GET', null);
-            return db;
-        }
-        fetchData().then(res => setProduct(res.data));
+        fetchData().then(res => setProduct(res));
     }, [])
+
+    function fetchData() {
+        const db = new Promise((a, b) => {
+            var dbRef = firebase.database().ref().child(`shock-price-product/${match.params.id - 1}`);
+            dbRef.on('value', snap => a(snap.val()));
+        })
+        return db;
+    }
 
     const ref = useRef();
 
