@@ -2,6 +2,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import callAPI from './../../util/callApi';
 import { useState } from 'react';
+import * as firebase from 'firebase';
 
 function Left(props) {
 
@@ -11,8 +12,11 @@ function Left(props) {
         FetchData().then(rs => setLetMenu(rs));
     }, []);
 
-    async function FetchData() {
-        const db = await callAPI('branch-care', 'GET', null).then(res => res.data);
+    function FetchData() {
+        const db = new Promise((a,b)=> {
+            var dbRef = firebase.database().ref().child('branch-care');
+            dbRef.on('value', snap => a(snap.val()));
+        })
         return db;
     }
 
