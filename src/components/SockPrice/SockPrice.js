@@ -30,7 +30,7 @@ function SockPrice(props) {
             </div>
             <FetchData width={width}/>
             <div className="flex justify-center pb-10 pt-10 ">
-                <Link to="/deal-hot" className="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 py-2 px-24 hover:bg-blue-500 hover:text-white border border-blue-600 rounded-lg text-blue-400 text-2xl">
+                <Link to="/deal-hot" className="transition duration-500 hover:no-underline ease-in-out transform hover:-translate-y-1 hover:scale-110 py-2 px-24 hover:bg-blue-500 hover:text-white border border-blue-600 rounded-lg text-blue-400 text-2xl">
                     Xem thêm
                 </Link>
             </div>
