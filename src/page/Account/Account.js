@@ -1,6 +1,6 @@
 import React from 'react';
 import HeaderApp from './../../components/Header/index';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import MyList from '../../components/Account/MyList';
 import Edit from '../../components/Account/Edit';
@@ -29,7 +29,7 @@ function Account(props) {
                     <i className="fas fa-chevron-right absolute text-4xl text-gray-500"
                         style={{ left: '105px' }}
                     ></i>
-                    <span className="text-gray-500 mr-10 cursor-pointer text-2xl" onClick={() => history.goBack()}>Trang chủ</span>
+                    <Link to="/" className="text-gray-500 mr-10 cursor-pointer text-2xl hover:text-gray-500 hover:no-underline">Trang chủ</Link>
                     <span className="cursor-pointer text-xl ml-2">
                         {Active === 0 && 'Thông tin tài khoản'}
                         {Active === 1 && 'Thông báo của tôi'}
