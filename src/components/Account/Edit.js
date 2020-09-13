@@ -22,7 +22,8 @@ function Edit() {
         hoTen : "",
         SDT : "",
         Email: "",
-        gender : "male"
+        gender : "male",
+        Date: "00/00/0000"
     })
 
     useEffect(() => {
@@ -31,7 +32,8 @@ function Edit() {
             hoTen : infoUser.hoTen,
             SDT : infoUser.SDT,
             Email: infoUser.Email,
-            gender : infoUser.gender
+            gender : infoUser.gender,
+            Date: infoUser.Date
         })
     }, [infoUser])
 
@@ -64,12 +66,12 @@ function Edit() {
                     <label className="w-full text-2xl mb-4 flex justify-between items-center">
                         <span className="font-thin w-1/4 text-xl text-gray-700">Số điện thoại</span>
                         <input type="text" value={info.SDT || ""} onChange={HandleChange} name="SDT"
-                            className="outline-none w-3/4 p-2 border border-gray-300 font-medium pl-4" style={{ borderRadius: '5px 5px 5px 5px' }} />
+                            className="outline-none w-3/4 opacity-75 p-2 border border-gray-300 font-medium pl-4" style={{ borderRadius: '5px 5px 5px 5px' }} />
                     </label>
                     <label className="w-full text-2xl mb-4 flex justify-between items-center">
                         <span className="font-thin w-1/4 text-xl text-gray-700">Email</span>
                         <input type="text" value={info.Email || ""} onChange={HandleChange} name="Email"
-                            className="outline-none w-3/4 p-2 border border-gray-300 font-medium pl-4" style={{ borderRadius: '5px 5px 5px 5px' }} />
+                            className="outline-none w-3/4 opacity-75 p-2 border border-gray-300 font-medium pl-4" style={{ borderRadius: '5px 5px 5px 5px' }} />
                     </label>
                     <label className="w-full text-2xl mb-4 flex items-center">
                         <span className="font-thin w-1/4 text-xl text-gray-700">Giới tính</span>
@@ -86,9 +88,9 @@ function Edit() {
                             <p className="text-xl text-gray-700">(không bắt buộc)</p>
                         </div>
                         <div className="w-3/4 flex justify-start">
-                            <Calendar Arrays={DAY} />
-                            <Calendar Arrays={MONTH} />
-                            <Calendar Arrays={YEAR} />
+                            <Calendar Arrays={DAY} val={info.Date ? parseInt(info.Date.substring(0,2)) : ""} name="Day"/>
+                            <Calendar Arrays={MONTH} val={info.Date ? parseInt(info.Date.substring(3,5)) : ""} name="Month" />
+                            <Calendar Arrays={YEAR} val={info.Date ? parseInt(info.Date.substring(6,10)) : ""} name="Year"/>
                         </div>
                     </label>
                     <div className="w-full text-2xl mb-4 flex justify-between items-center">
@@ -124,7 +126,7 @@ function Edit() {
                             />
                         </label>
                     </div>
-                    <button className="w-64 text-xl ml-64 flex justify-center items-center py-3 mb-16" style={{ background: '#fae62b', borderRadius: '5px 5px 5px 5px' }}>
+                    <button className="w-64 text-xl ml-64 flex justify-center items-center py-3 mb-16 hover:opacity-75 duration-500" style={{ background: '#fae62b', borderRadius: '5px 5px 5px 5px' }}>
                         <span className="text-gray-700 font-semibold">Cập nhật</span>
                     </button>
                 </form>
