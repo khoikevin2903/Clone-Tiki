@@ -104,7 +104,7 @@ function Header(props) {
                             </button>
                             <div className="flex text-white ml-12 items-center font-xl">
                                 <i className="fas fa-id-card-alt mr-4 text-4xl" />
-                                <span className="text-xl">Theo dõi <br /> đơn hàng</span>
+                                <Link to="/account/notification" className="text-xl hover:no-underline hover:text-white active:no-underline active:text-white">Theo dõi <br /> đơn hàng</Link>
                             </div>
                             <div className="flex text-white ml-12 items-center font-xl">
                                 <i className="fas fa-bell mr-4 text-4xl" />

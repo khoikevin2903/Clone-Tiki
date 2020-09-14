@@ -120,7 +120,7 @@ function Edit() {
                         </label>
                         <label className="w-full text-2xl mb-4 flex justify-between items-center">
                             <span className="font-hairline w-1/4 text-xl text-gray-700">Nhập lại</span>
-                            <input type="text" className="outline-none w-3/4 p-2 border border-gray-300 font-medium pl-4"
+                            <input type="password" className="outline-none w-3/4 p-2 border border-gray-300 font-medium pl-4"
                                 style={{ borderRadius: '5px 5px 5px 5px' }}
                                 placeholder="Nhập lại mật khẩu mới"
                             />

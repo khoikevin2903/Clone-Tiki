@@ -1,6 +1,5 @@
 import React from 'react';
 import { useEffect } from 'react';
-import callAPI from './../../util/callApi';
 import { useState } from 'react';
 import * as firebase from 'firebase';
 

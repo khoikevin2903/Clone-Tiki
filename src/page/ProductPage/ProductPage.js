@@ -5,7 +5,6 @@ import Clock from './../../components/Clock/index';
 import { useDispatch } from 'react-redux';
 import { onAddToCart } from './../../reducers/cart';
 import { openMessageAddCart } from './../../reducers/MessageAddCart';
-import callAPI from './../../util/callApi';
 import * as firebase from 'firebase';
 import { formatCurrency } from './../../components/FormatMoney/FormatMoney';
 

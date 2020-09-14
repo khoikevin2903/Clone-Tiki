@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 import { formatCurrency } from './../FormatMoney/FormatMoney';
-import { increaseAmount, reductionAmount } from './../../reducers/cart';
+import { increaseAmount, reductionAmount,onDeleteCart } from './../../reducers/cart';
 //import {fetchDataUser} from './../../reducers/UserInfo';
 
 ListCarts.propTypes = {
@@ -24,6 +24,12 @@ function ListCarts(props) {
     const decAmout = (index) => {
         dispatch(reductionAmount(index))
     }
+    
+    const HandleDelete = (cart) => {
+        if(window.confirm("Bạn có chắc chắn muốn xóa sản phẩm này trong giỏ ?")){
+            dispatch(onDeleteCart(cart));
+        }
+    }
 
     const elm = carts.map((cart, index) => {
         return (
@@ -31,10 +37,10 @@ function ListCarts(props) {
                 <img src={cart.img} alt="" className="h-56 py-4 w-1/6" />
                 <div className="ml-4 w-1/2 flex flex-col pt-4">
                     <p className="text-2xl flex flex-wrap">{cart.name}</p>
-                    <p className="text-xl mt-6">Cung cấp bởi <span className="text-blue-400">The Galaxy Store</span></p>
+                    <p className="text-xl mt-6">Cung cấp bởi <span className="text-blue-400 cursor-pointer">The Galaxy Store</span></p>
                     <div className="flex text-blue-400 mt-6 text-xl">
-                        <p>Xóa</p>
-                        <p className="ml-6">Để dành mua sau</p>
+                        <p className="cursor-pointer" onClick={() => HandleDelete(cart)}>Xóa</p>
+                        <p className="ml-6 cursor-pointer">Để dành mua sau</p>
                     </div>
                 </div>
                 <div className="ml-10 flex justify-end w-1/3 pt-4">

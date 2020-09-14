@@ -1,6 +1,6 @@
 import React from 'react';
 import HeaderApp from './../../components/Header/index';
-import { Link, useHistory } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import MyList from '../../components/Account/MyList';
 import Edit from '../../components/Account/Edit';
@@ -16,8 +16,6 @@ import Productquestion from '../../components/Account/Productquestion';
 import Address from './../../components/Account/Address';
 
 function Account(props) {
-
-    const history = useHistory();
     
     const Active = useSelector(state => state.InfoActive);
 

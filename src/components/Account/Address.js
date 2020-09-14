@@ -13,8 +13,7 @@ function Adress(props) {
 
     const HandleChange = (e) => {
         var target = e.target;
-        // var name = target.name;
-        // var value = target.value;
+        
     }
 
 

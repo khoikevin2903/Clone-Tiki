@@ -10,6 +10,7 @@ import Account from './page/Account/Account';
 import { useEffect } from 'react';
 import { fetchInfoUser } from './reducers/InfoUser';
 import {fetchSockPrice,SaveProduct} from './reducers/shockPriceProduct';
+import CheckOutPage from './page/CheckOutPage/CheckOutPage';
 
 
 App.propTypes = {
@@ -34,6 +35,11 @@ function App() {
 
 	if (loginSuccsess) {
 		Routes.push(
+			{
+				path: '/checkout',
+				exact: false,
+				main: CheckOutPage
+			},
 			{
 				path: '/account/:name',
 				exact: false,
