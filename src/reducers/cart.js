@@ -32,6 +32,10 @@ const cart = createSlice({
             localStorage.setItem('cart', JSON.stringify(state));
             return state; 
         },
+        onDeleteCart: (state, action) => {
+            const index = state.findIndex(x => x.id === action.payload.id);
+            state.splice(index, 1);
+        },
         increaseAmount: (state, action) => {
             const index = action.payload;
             state[index] = {
@@ -49,7 +53,7 @@ const cart = createSlice({
                 }
                 localStorage.setItem('cart', JSON.stringify(state));
             }
-        }
+        }       
     },
         // extraReducers : {
         //     [fetchDataUser.fulfilled] : (state, action) => {
@@ -59,5 +63,5 @@ const cart = createSlice({
 })
 
 const { reducer, actions } = cart;
-export const { onAddToCart,increaseAmount,reductionAmount } = actions;
+export const { onAddToCart,increaseAmount,reductionAmount,onDeleteCart } = actions;
 export default reducer; 
