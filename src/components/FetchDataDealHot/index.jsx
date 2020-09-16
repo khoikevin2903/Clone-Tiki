@@ -73,7 +73,7 @@ function FetchData(props) {
                             <p style={{ zIndex: '999' }}>{stringSell}</p>
                         </div>
                     </div>
-                    <p className="mr-2">{item.duration} ngày</p>
+                    <p className="mr-2 text-xl">{item.duration} ngày</p>
                     <Clock />
                 </div>
             </Link>

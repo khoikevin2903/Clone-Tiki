@@ -53,7 +53,7 @@ const cart = createSlice({
                 }
                 localStorage.setItem('cart', JSON.stringify(state));
             }
-        }       
+        }  
     },
         // extraReducers : {
         //     [fetchDataUser.fulfilled] : (state, action) => {
