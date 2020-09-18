@@ -70,7 +70,7 @@ function ProductPage({ history, location, match }) {
                             </div>
 
                         </div>
-                    </div>
+                    </div>zz
                 </div>
                 <div className="w-7/12 border-l-2 border-blue-100  bg-white">
                     <div className="p-4 border-b mr-0">

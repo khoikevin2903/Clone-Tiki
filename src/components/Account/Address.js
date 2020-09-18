@@ -1,11 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useState} from 'react';
 import ClassNames from 'classnames';
+import * as address from './../../constants/address';
+import Addressfull from './Addressfull';
+import {useSelector} from 'react-redux';
 
 function Adress(props) {
 
     const [create, setCreate] = useState(false)
+
+    const infoUser = useSelector(state => state.InfoUser)
 
     const HandleCreate = () => {
         setCreate(!create);
@@ -13,7 +18,6 @@ function Adress(props) {
 
     const HandleChange = (e) => {
         var target = e.target;
-        
     }
 
 
@@ -48,46 +52,54 @@ function Adress(props) {
                     <form className="w-2/3 p-6">
                         <label className="w-full text-2xl mb-4 flex justify-between items-center">
                             <span className="font-hairline w-1/4 text-xl text-gray-700">Họ tên:</span>
-                            <input type="text" value="" onChange={HandleChange} name="hoTen"
+                            <input type="text" value={infoUser.hoTen || ""} onChange={HandleChange} name="hoTen"
                                 className="outline-none w-3/4 p-2 border border-gray-300 font-medium pl-4" style={{ borderRadius: '5px 5px 5px 5px' }} />
                         </label>
                         <label className="w-full text-2xl mb-4 flex justify-between items-center">
                             <span className="font-thin w-1/4 text-xl text-gray-700">Công ty:</span>
-                            <input type="text" value="" onChange={HandleChange} name="Cty"
+                            <input type="text" value={infoUser.congTy || ""} onChange={HandleChange} name="Cty"
                                 className="outline-none w-3/4 p-2 border border-gray-300 font-medium pl-4" style={{ borderRadius: '5px 5px 5px 5px' }} />
                         </label>
                         <label className="w-full text-2xl mb-4 flex justify-between items-center">
                             <span className="font-thin w-1/4 text-xl text-gray-700">Số điện thoại:</span>
-                            <input type="text" value="" onChange={HandleChange} name="SDT"
+                            <input type="text" value={infoUser.SDT || ""} onChange={HandleChange} name="SDT"
                                 className="outline-none w-3/4 p-2 border border-gray-300 font-medium pl-4" style={{ borderRadius: '5px 5px 5px 5px' }} />
                         </label>
                         <label className="w-full text-2xl mb-4 flex justify-between items-center">
                             <span className="font-thin w-1/4 text-xl text-gray-700">Tỉnh/Thành phố:</span>
-                            <input type="text" value="" onChange={HandleChange} name="Cty"
-                                className="outline-none w-3/4 p-2 border border-gray-300 font-medium pl-4" style={{ borderRadius: '5px 5px 5px 5px' }} />
+                            <Addressfull Arrays={address.THANHPHO} name="city" width="w-3/4"/>
                         </label>
                         <label className="w-full text-2xl mb-4 flex justify-between items-center">
                             <span className="font-thin w-1/4 text-xl text-gray-700">Quận huyện:</span>
-                            <input type="text" value="" onChange={HandleChange} name="Cty"
-                                className="outline-none w-3/4 p-2 border border-gray-300 font-medium pl-4" style={{ borderRadius: '5px 5px 5px 5px' }} />
+                            <Addressfull Arrays={address.HUYEN} name="city" width="w-3/4"/>
                         </label>
                         <label className="w-full text-2xl mb-4 flex justify-between items-center">
                             <span className="font-thin w-1/4 text-xl text-gray-700">Phường xã</span>
-                            <input type="text" value="" onChange={HandleChange} name="Cty"
-                                className="outline-none w-3/4 p-2 border border-gray-300 font-medium pl-4" style={{ borderRadius: '5px 5px 5px 5px' }} />
+                            <Addressfull Arrays={address.XA} name="city" width="w-3/4"/>
                         </label>
                         <label className="w-full text-2xl mb-4 flex items-center">
                             <span className="font-thin w-1/4 text-xl text-gray-700">Loại địa chỉ:</span>
                             <div className=" flex items-center">
-                                <input type="radio" className="p-4 h-8 w-8 mr-3 mt-0" id="male" name="gender" value="male" checked="" onChange={HandleChange} />
+                                <input type="radio" className="p-4 h-8 w-8 mr-3 mt-0"
+                                    id="home"
+                                    name="home"
+                                    value="home" checked=""
+                                    onChange={HandleChange}
+                                />
                                 <label className="font-thin mr-10 mb-0">Nhà riêng / Chung cư</label>
-                                <input type="radio" className="p-4 h-8 w-8 mr-3 mt-0" id="female" name="gender" value="female" checked="female" onChange={HandleChange} />
+                                <input type="radio" className="p-4 h-8 w-8 mr-3 mt-0"
+                                    id="company" 
+                                    name="company"
+                                    value="company"
+                                    checked=""
+                                    onChange={HandleChange}
+                                />
                                 <label className="font-thin">Cơ quan / Công ty</label>
                             </div>
                         </label>
                         <div className="w-full text-2xl mb-8 flex justify-between items-center pt-4">
                             <div className="ml-56 pl-4 flex items-center">
-                                <input type="checkbox" className="h-8 w-8 mt-0"/>
+                                <input type="checkbox" className="h-8 w-8 mt-0" />
                                 <span className="ml-10">Đặt làm địa chỉ mặc định</span>
                             </div>
                         </div>

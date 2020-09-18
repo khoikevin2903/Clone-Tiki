@@ -16,13 +16,14 @@
     
 }
 .freeship::after {
-    content: "";
     position: absolute;
     z-index: -1;
+
     top: 0px;
     right: -4px;
     height: 100%;
     width: 12px;
+    
     transform: skewX(-16deg);
     background-color: rgb(0, 153, 0);
 }

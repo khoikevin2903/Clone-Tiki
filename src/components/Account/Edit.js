@@ -88,9 +88,9 @@ function Edit() {
                             <p className="text-xl text-gray-700">(không bắt buộc)</p>
                         </div>
                         <div className="w-3/4 flex justify-start">
-                            <Calendar Arrays={DAY} val={info.Date ? parseInt(info.Date.substring(0,2)) : ""} name="Day"/>
-                            <Calendar Arrays={MONTH} val={info.Date ? parseInt(info.Date.substring(3,5)) : ""} name="Month" />
-                            <Calendar Arrays={YEAR} val={info.Date ? parseInt(info.Date.substring(6,10)) : ""} name="Year"/>
+                            <Calendar Arrays={DAY} val={info.Date ? parseInt(info.Date.substring(0,2)) : ""} name="Day" width="w-56"/>
+                            <Calendar Arrays={MONTH} val={info.Date ? parseInt(info.Date.substring(3,5)) : ""} name="Month" width="w-56" />
+                            <Calendar Arrays={YEAR} val={info.Date ? parseInt(info.Date.substring(6,10)) : ""} name="Year" width="w-56"/>
                         </div>
                     </label>
                     <div className="w-full text-2xl mb-4 flex justify-between items-center">
