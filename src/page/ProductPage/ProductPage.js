@@ -18,7 +18,7 @@ function ProductPage({ history, location, match }) {
 
     function fetchData() {
         const db = new Promise((a, b) => {
-            var dbRef = firebase.database().ref().child(`shock-price-product/${match.params.id - 1}`);
+            var dbRef = firebase.database().ref().child(`${match.url.split('/',2).join('')}/${match.params.id}`);
             dbRef.on('value', snap => a(snap.val()));
         })
         return db;
@@ -70,7 +70,7 @@ function ProductPage({ history, location, match }) {
                             </div>
 
                         </div>
-                    </div>zz
+                    </div>
                 </div>
                 <div className="w-7/12 border-l-2 border-blue-100  bg-white">
                     <div className="p-4 border-b mr-0">
