@@ -27,12 +27,12 @@ function HomePage(props) {
                     <JustForYou />
                 </div>
             </div>
-            <div className="fixed cursor-pointer" style={{top: "230px" , left: "50px"}}>
-                <img src="https://salt.tikicdn.com/cache/w150/ts/banner/93/4e/3b/3729318ad9c980ffcf326a88c2fd5bd3.png" alt="" width={70} className="" 
+            <div className="fixed cursor-pointer hover:opacity-75" style={{top: "230px" , left: "50px"}}>
+                <img src="https://salt.tikicdn.com/cache/w150/ts/banner/93/4e/3b/3729318ad9c980ffcf326a88c2fd5bd3.png" alt="" width={70}
                 />
             </div>
-            <div className="fixed cursor-pointer" style={{top: "230px", right: "60px"}}>
-                <img src="https://salt.tikicdn.com/cache/w150/ts/banner/93/4e/3b/3729318ad9c980ffcf326a88c2fd5bd3.png" alt="" width={70} className="" 
+            <div className="fixed cursor-pointer hover:opacity-75" style={{top: "230px", right: "60px"}}>
+                <img src="https://salt.tikicdn.com/cache/w150/ts/banner/93/4e/3b/3729318ad9c980ffcf326a88c2fd5bd3.png" alt="" width={70}
                 />
             </div>
         </div>
