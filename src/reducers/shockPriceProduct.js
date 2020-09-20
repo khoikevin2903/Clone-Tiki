@@ -15,6 +15,7 @@ const shockPrice = createSlice({
     initialState: [],
     reducers: {
         SaveProduct: (state, action) => {
+            localStorage.setItem('products', JSON.stringify(action.payload));
             return action.payload;
         }
     },
