@@ -184,7 +184,7 @@ function MyLish(props) {
                     }
                 )}>Hỏi đáp</p>
             </Link>
-            <li className={ClassNames(
+            <Link to="/account/TikiNow" className={ClassNames(
                 'p-3 no-underline flex items-center cursor-pointer hover:bg-gray-300 hover:no-underline hover:text-black focus:no-underline',
                 {
                     'bg-gray-300': InfoActive === 11
@@ -200,7 +200,7 @@ function MyLish(props) {
                         'opacity-100': InfoActive === 11
                     }
                 )}>Thông tin TikiNOW</p>
-            </li>
+            </Link>
             <li className={ClassNames(
                 'p-3 no-underline flex items-center cursor-pointer hover:bg-gray-300 hover:no-underline hover:text-black focus:no-underline',
                 {
