@@ -50,7 +50,7 @@ function FetchData(props) {
         else if (sells === 10) stringSell = 'Hết hàng'
         else stringSell = `Đã bán ${sells}`;
         return (
-            <Link to={'/product/' + item.id} className={ClassNames(
+            <Link to={'/shock-price-product/' + item.id} className={ClassNames(
                 'mt-0 Link pt-8 pb-2 px-4 inline cursor-pointer hover:no-underline hover:text-black', width)}
                 key={index} onClick={() => AddToCartChecked(item)}>
                 <img className="ml-4" src={item.img} alt="" />
