@@ -14,6 +14,7 @@ import SaveForLater from '../../components/Account/SaveForLater';
 import Review from '../../components/Account/Review';
 import Productquestion from '../../components/Account/Productquestion';
 import Address from './../../components/Account/Address';
+import TikiNow from '../../components/Account/TikiNow';
 
 function Account(props) {
     
@@ -63,10 +64,10 @@ function Account(props) {
                     {Active === 8 && <SaveForLater />}
                     {Active === 9 && <Review />}
                     {Active === 10 && <Productquestion />}
-                    {/* {Active === 11 && 'Thông tin TikiNow'}
+                    {Active === 11 && <TikiNow />}
                     {Active === 12 && 'Mã giảm giá'}
                     {Active === 13 && 'Quản lý Tiki xu của tôi'}
-                    {Active === 14 && 'BookCare của tôi'} */}
+                    {Active === 14 && 'BookCare của tôi'}
                 </div>
             </div>
         </div>

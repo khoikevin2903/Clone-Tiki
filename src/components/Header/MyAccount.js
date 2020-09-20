@@ -42,7 +42,7 @@ function MyAccount(props) {
             <Link to="/account/product" className="p-3 hover:no-underline text-black text-xl flex justify-start hover:bg-blue-300 w-full items-center rounded-lg">
                 Nhận xét sản phẩm đã mua
            </Link>
-            <Link to="/account" className="p-3 hover:no-underline text-black text-xl flex justify-start hover:bg-blue-300 w-full items-center rounded-lg">
+            <Link to="/account/tikinow" className="p-3 hover:no-underline text-black text-xl flex justify-start hover:bg-blue-300 w-full items-center rounded-lg">
                 <div className="w-1/5 text-2xl">
                     <img src="https://mgg.vn/wp-content/uploads/2019/08/tiki-mien-phi-giao-hang.jpg" alt="" />
                 </div>
@@ -51,7 +51,7 @@ function MyAccount(props) {
                     <p>Đăng kí sử dụng ngay</p>
                 </div>
             </Link>
-            <Link to="/account" className="p-3 hover:no-underline text-black text-xl flex justify-start hover:bg-blue-300 w-full items-center rounded-lg">
+            <Link to="/account/counpons" className="p-3 hover:no-underline text-black text-xl flex justify-start hover:bg-blue-300 w-full items-center rounded-lg">
                 <div className="w-1/5 text-2xl">
                     <i className="fas fa-tags text-yellow-600"></i>
                 </div>
@@ -60,7 +60,7 @@ function MyAccount(props) {
                     <p>Bạn đang có 0 mã giảm giá</p>
                 </div>
             </Link>
-            <Link to="/account" className="p-3 hover:no-underline text-black text-xl flex justify-start hover:bg-blue-300 w-full items-center rounded-lg">
+            <Link to="/account/reward" className="p-3 hover:no-underline text-black text-xl flex justify-start hover:bg-blue-300 w-full items-center rounded-lg">
                 <div className="w-1/5 text-2xl">
                     <i className="fab fa-bitcoin text-yellow-600"></i>
                 </div>
@@ -69,7 +69,7 @@ function MyAccount(props) {
                     <p>Bạn đang có 0 tiki xu</p>
                 </div>
             </Link>
-            <Link to="/account" className="p-3 hover:no-underline text-black text-xl flex justify-start hover:bg-blue-300 w-full items-center rounded-lg">
+            <Link to="/account/bookcare" className="p-3 hover:no-underline text-black text-xl flex justify-start hover:bg-blue-300 w-full items-center rounded-lg">
                 <div className="w-1/5 text-2xl">
                     <i className="fas fa-book text-blue-400"></i>
                 </div>
