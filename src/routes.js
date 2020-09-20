@@ -14,8 +14,13 @@ const ROUTES = [
         main: DealHot
     },
     {
-        path: '/product/:id',
-        exact: false,
+        path: '/shock-price-product/:id',
+        exact: true,
+        main: ProductPage
+    },
+    {
+        path: '/Just-For-You/:id',
+        exact: true,
         main: ProductPage
     }
 ]
