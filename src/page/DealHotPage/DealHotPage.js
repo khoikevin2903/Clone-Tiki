@@ -3,13 +3,11 @@ import Left from '../../components/DealHot/Left';
 import Head from '../../components/DealHot/Head';
 import TitleDeal from './TitleDeal';
 import SockPrice from '../../components/DealHot/SockPrice';
-import {useHistory} from 'react-router-dom'
 import HeaderApp from './../../components/Header/index'; 
+import { Link } from 'react-router-dom';
 
 
 function DealHotPage(props) {
-   
-    const history = useHistory();
 
     return (
         <div>
@@ -19,7 +17,7 @@ function DealHotPage(props) {
                     <i className="fas fa-chevron-right absolute text-4xl text-gray-500"
                         style={{ left: '120px' }}
                     ></i>
-                    <span className="text-gray-500 mr-10 cursor-pointer text-2xl" onClick={() => history.goBack()}>Trang chủ</span>
+                    <Link to="/" className="text-gray-500 mr-10 cursor-pointer text-2xl hover:text-gray-500 hover:no-underline">Trang chủ</Link>
                     <span className="cursor-pointer text-xl">Tiki Deal</span>
                 </div>
             </div>

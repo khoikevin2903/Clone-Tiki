@@ -7,7 +7,7 @@ import TotalCarts from '../../components/Checkout/TotalCarts';
 
 function CheckOutPage(props) {
 
-    const carts = useSelector(state => state.Carts);
+    const carts = JSON.parse(localStorage.getItem('cart'));
 
     const Amounts = carts.reduce((accumulator, currentValue) => {
         return accumulator + currentValue.amount;

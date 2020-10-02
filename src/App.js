@@ -21,7 +21,7 @@ function App() {
 
 	const Routes = ROUTES;
 
-	const dispatch = useDispatch();
+	const dispatch = useDispatch()
 
 	useEffect(() => {
 		dispatch(fetchInfoUser('khoikevin'));
