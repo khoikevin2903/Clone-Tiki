@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 import HeaderApp from './../../components/Header/index';
 import ListCarts from '../../components/Checkout/ListCarts';
 import TotalCarts from '../../components/Checkout/TotalCarts';

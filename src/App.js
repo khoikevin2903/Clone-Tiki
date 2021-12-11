@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Router, Route, Switch } from 'react-router-dom';
 import ROUTES from './routes';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
@@ -26,7 +26,7 @@ function App() {
 	useEffect(() => {
 		dispatch(fetchInfoUser('khoikevin'));
 		dispatch(fetchSockPrice('shock-price-product'));
-	}, [])
+	}, [dispatch])
 
 	const loginSuccsess = useSelector(state => state.LoginSuccess);
 

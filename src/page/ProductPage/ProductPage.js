@@ -13,16 +13,17 @@ function ProductPage({ history, location, match }) {
     const [product, setProduct] = useState({});
 
     useEffect(() => {
-        fetchData().then(res => setProduct(res));
-    }, [])
 
-    function fetchData() {
-        const db = new Promise((a, b) => {
-            var dbRef = firebase.database().ref().child(`${match.url.split('/',2).join('')}/${match.params.id}`);
-            dbRef.on('value', snap => a(snap.val()));
-        })
-        return db;
-    }
+        const fetchData = () => {
+            const db = new Promise((a, b) => {
+                var dbRef = firebase.database().ref().child(`${match.url.split('/', 2).join('')}/${match.params.id}`);
+                dbRef.on('value', snap => a(snap.val()));
+            })
+            return db;
+        }
+
+        fetchData().then(res => setProduct(res));
+    }, [match.params.id, match.url])
 
     const ref = useRef();
 
@@ -97,8 +98,8 @@ function ProductPage({ history, location, match }) {
                                     <span className="flex flex-wrap text-xl" style={{ color: 'green' }}>
                                         <p className="pr-1 pl-4 font-semibold">
                                             Miễn phí giao tiêu chuẩn (tối đa 30k)
-                                    </p> cho đơn hàng từ 249k
-                                </span>
+                                        </p> cho đơn hàng từ 249k
+                                    </span>
                                 </div>
                                 <div className="mt-4 mr-4">
                                     <p className="text-red-600 text-3xl font-bold">{product.salePrice ? formatCurrency(product.salePrice) : ''} <span className="underline"> đ</span></p>
@@ -140,7 +141,7 @@ function ProductPage({ history, location, match }) {
                                     onClick={() => addToCart(product, amount)}>
                                     <i className="fas fa-cart-plus mr-4 text-2xl"></i>
                                     CHỌN MUA
-                               </button>
+                                </button>
                                 <i className="far fa-heart text-red-500 text-6xl ml-10 mr-2 mt-4"></i>
                             </div>
                         </div>

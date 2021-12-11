@@ -27,14 +27,7 @@ function Edit() {
     })
 
     useEffect(() => {
-        setInfo({
-            ...info,
-            hoTen : infoUser.hoTen,
-            SDT : infoUser.SDT,
-            Email: infoUser.Email,
-            gender : infoUser.gender,
-            Date: infoUser.Date
-        })
+        setInfo({...infoUser})
     }, [infoUser])
 
     const HandleChange = (e) => {

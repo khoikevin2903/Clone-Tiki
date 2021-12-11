@@ -26,7 +26,7 @@ function SockPrice(props) {
 
     useEffect(() => {
         dispatch(ChangeLimitPage(pageProduct))
-    }, [])
+    }, [dispatch, pageProduct])
 
     const HandlePagePlus = () => {
         if (pageProduct.page < 5) {

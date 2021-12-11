@@ -23,21 +23,20 @@ function FetchData(props) {
     const filters = useSelector(state => state.LimitPage);
 
     const { limit, page } = filters;
- 
+
     const [data, setData] = useState(products);
 
     const dispatch = useDispatch();
 
     useEffect(() => {
+
+        const check = (item) => {
+            if (item.id <= limit * page && (limit * page - limit + 1) <= item.id) return true;
+            return false;
+        }
+
         setData(products.filter(x => check(x) === true));
-    }, [filters]);
-
-
-    const check = (item) => {
-         if (item.id <= limit * page && (limit * page - limit + 1) <= item.id) return true;
-         return false;
-        
-    }
+    }, [limit, page]);
 
     const AddToCartChecked = (item) => {
         dispatch(onAddToCartChecked(item));

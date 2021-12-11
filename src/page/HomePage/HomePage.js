@@ -5,6 +5,7 @@ import BranchCare from './../../components/BranchCare/Branch';
 import JustForYou from './../../components/JustForYou/JustForYou';
 import HeaderApp from './../../components/Header/index'; 
 import HotSearch from '../../components/hotSearch/HotSearch';
+import './Homepage.css';
 
 function HomePage(props) {
 
@@ -27,11 +28,11 @@ function HomePage(props) {
                     <JustForYou />
                 </div>
             </div>
-            <div className="fixed cursor-pointer hover:opacity-75" style={{top: "230px" , left: "50px"}}>
+            <div className="fixed cursor-pointer hover:opacity-75 sale" style={{top: "230px" , left: "30px"}}>
                 <img src="https://salt.tikicdn.com/cache/w150/ts/banner/93/4e/3b/3729318ad9c980ffcf326a88c2fd5bd3.png" alt="" width={70}
                 />
             </div>
-            <div className="fixed cursor-pointer hover:opacity-75" style={{top: "230px", right: "60px"}}>
+            <div className="fixed cursor-pointer hover:opacity-75 sale" style={{top: "230px", right: "40px"}}>
                 <img src="https://salt.tikicdn.com/cache/w150/ts/banner/93/4e/3b/3729318ad9c980ffcf326a88c2fd5bd3.png" alt="" width={70}
                 />
             </div>
